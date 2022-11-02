@@ -18,11 +18,7 @@ namespace turkcell.Models
         {
             var hasProduct = _products.FirstOrDefault(x => x.id == id); 
 
-            if (hasProduct == null)
-            {
-                throw new Exception($"Bu id ({id}) ye sahip ürün bulunmamaktadır .");
-            
-            }
+          
             _products.Remove(hasProduct);   
 
         }

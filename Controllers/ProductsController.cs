@@ -28,7 +28,10 @@ namespace turkcell.Controllers
         
         public IActionResult Remove(int id)
         {
-            _productRepository.Remove(id);
+            var product = _appDbContext.Products.Find(id);
+            //prinarykey değerlerinin bulunup silinmesi için find metotu kullanılır . 
+            _appDbContext.Products.Remove(product);
+            _appDbContext.SaveChanges();
             return RedirectToAction("Index");
         }
        
