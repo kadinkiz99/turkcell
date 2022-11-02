@@ -1,0 +1,36 @@
+﻿@using turkcell.Controllers
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+@*
+
+<p>@ViewBag.name</p>
+
+@{
+    var name = ViewBag.name;
+    <p>@name</p>
+
+
+}
+<p>@name</p>
+
+@foreach (var item in @ViewData["names"] as List<string>)
+{
+    <p>@item</p>
+}
+
+<p>@ViewBag.person.Id  - @ViewBag.person.name - @ViewBag.person.age</p>
+
+*@
+
+@Model List<Product>;
+
+    @foreach (var item in Model)
+   {
+
+        <p>@item.Id - >@item.name</p>
+    }
+
