@@ -9,7 +9,6 @@
         public string color  { get; set; }
 		public int? Width { get; set; }// ? nullable olduğu için eklendş 
 		public int? Height { get; set; }
-
-
+        
 	}
 }
