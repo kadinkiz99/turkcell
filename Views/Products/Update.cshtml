@@ -4,4 +4,23 @@
 }
 
 <h1>Ürün Güncelleme </h1>
+@model Product
+<form  asp-controller="Products" asp-action="Update" method="post" >
+
+     <input type="hidden" asp-for="id" />
+    <label>Ürün İsmi :</label>
+    <input type="text" asp-for="Name" /><br />
+
+    <label>Ürün Fiyat :</label>
+    <input type="text" asp-for="Price" /><br />
+
+    <label>Ürün Stok :</label>
+    <input type="text" asp-for="Stock" /><br />
+
+    <label>Ürün Renk :</label>
+    <input type="text" asp-for="color" /><br />
+
+    <button type="submit">ÜRÜN GÜNCELLE</button>
+</form>
+
 

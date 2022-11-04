@@ -68,7 +68,17 @@ namespace turkcell.Controllers
         }
 		public IActionResult Update(int id)
 		{
-			return View();
+            var product =_appDbContext.Products.Find(id);   
+			return View(product);
+
+		}
+        [HttpPost]
+		public IActionResult Update(Product updateproduct)
+		{
+            _appDbContext.Products.Update(updateproduct);
+            _appDbContext.SaveChanges();
+
+			return RedirectToAction("Index");
 
 		}
 	}
