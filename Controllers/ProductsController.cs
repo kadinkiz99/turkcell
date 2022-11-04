@@ -62,9 +62,10 @@ namespace turkcell.Controllers
 
             //request -Head -Body 
 
-            _appDbContext.SaveChanges();    
+            _appDbContext.SaveChanges();
+			TempData["status"] = "Ürün başarıyla Eklendi";
 
-        return RedirectToAction("Index");
+			return RedirectToAction("Index");
         }
 		public IActionResult Update(int id)
 		{
@@ -73,11 +74,13 @@ namespace turkcell.Controllers
 
 		}
         [HttpPost]
-		public IActionResult Update(Product updateproduct)
+		public IActionResult Update(Product updateproduct )
 		{
-            _appDbContext.Products.Update(updateproduct);
+            //query string kullanark id gönderme işlemi 
+            //updateproduct.id = productId;
+			_appDbContext.Products.Update(updateproduct);
             _appDbContext.SaveChanges();
-
+            TempData["status"] = "Ürün başarıyla Güncellendi";
 			return RedirectToAction("Index");
 
 		}

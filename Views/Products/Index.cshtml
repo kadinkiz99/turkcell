@@ -3,8 +3,14 @@
     ViewData["Title"] = "Index";
 }
 @model List<Product>
-<h1>Products List</h1>
-                <td><a asp-controller="products" asp-action="Add">EKLE</a></td>
+<h1>ÜRÜNLER</h1>
+@if(TempData["status"] !=null)
+{
+    <div class="alert alert-primary" role="alert">
+      @TempData["status"]
+    </div>
+    }
+<td><a asp-controller="products" asp-action="Add">ÜRÜN EKLE</a></td>
 
 <table class=" table" >
 

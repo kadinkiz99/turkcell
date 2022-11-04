@@ -5,11 +5,11 @@
 
 <h1>Ürün Güncelleme </h1>
 @model Product
-<form  asp-controller="Products" asp-action="Update" method="post" >
-
-     <input type="hidden" asp-for="id" />
+<form  asp-controller="Products" asp-action="Update"  method="post" >
+    <!--  <form asp-controller="Products" asp-action="Update" asp-route-productId="@Model.id" method="post">
+     <input type="hidden" asp-for="id" /> -->
     <label>Ürün İsmi :</label>
-    <input type="text" asp-for="Name" /><br />
+    <input type="text" asp-for="Name"  /><br />
 
     <label>Ürün Fiyat :</label>
     <input type="text" asp-for="Price" /><br />
