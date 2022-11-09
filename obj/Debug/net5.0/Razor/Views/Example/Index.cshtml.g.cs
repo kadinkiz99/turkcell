@@ -26,8 +26,15 @@ using turkcell.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "D:\ASP.NET\turkcell\turkcell\Views\_ViewImports.cshtml"
+using turkcell.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c9f2215bdde5c45f06558bec4eb3aa10979fa9e8", @"/Views/Example/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ded3f6564577275bcb6b0acd1e5e62e16f0511c0", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"fb46744bb557dd8b8328ab5ef0b875ba9d4b31bf", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Example_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     #nullable disable

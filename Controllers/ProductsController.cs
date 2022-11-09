@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using System.Linq;
 using turkcell.Helpers;
 using turkcell.Models;
+using turkcell.ViewModels;
 
 namespace turkcell.Controllers
 {
@@ -14,18 +16,23 @@ namespace turkcell.Controllers
         AppDbContext _appDbContext;
         // önceden tanımladığımız repo projeye eklendi 
         private readonly ProductRepository _productRepository;
-      // private IHelper _helper; 
-        public ProductsController( )
+        private readonly IMapper _mapper;
+
+        // private IHelper _helper; 
+        public ProductsController(IMapper mapper = null)
         {
             _productRepository = new ProductRepository();
-           _appDbContext = new AppDbContext(); 
-           // _helper = helper;   
+            _appDbContext = new AppDbContext();
+            _mapper = mapper;
+            // _helper = helper;   
         }
-        
-		public IActionResult Index()
+
+
+
+        public IActionResult Index()
         {
-			var products = _appDbContext.Products.ToList(); 
-            return View(products);
+			var products = _appDbContext.Products.ToList();
+            return View(_mapper.Map<List<ProductVM>>(products));
 
 
         }
