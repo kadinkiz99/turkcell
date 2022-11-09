@@ -21,8 +21,12 @@
             <th>Price </th>
             <th>Stock </th>
             <th>Color </th>
-             <th>Width </th>
-            <th>Height </th>
+            <th>IsPublish </th>
+            <th>Expire </th>
+            <th>Description </th>
+
+
+         
 
 
         </tr>
@@ -39,8 +43,22 @@
                 <td>@item.Price</td>
                 <td>@item.Stock</td>
                 <td>@item.color</td>
-                <td>@item.Width</td>
-                <td>@item.Height</td>
+                @if (@item.IsPublish = false) 
+                {
+                    <td>HAYIR</td>
+                }
+                else
+                {
+                <td>EVET</td>
+
+                }
+
+                <td>@item.Expire</td>
+
+                <td>
+                 
+                    @item.Description
+                </td>
 
                 <td><a asp-controller="products" asp-action="Remove" asp-route-id="@item.id">SİL</a></td>
                 <td><a asp-controller="products" asp-action="Update" asp-route-id="@item.id">GÜNCELLE</a></td>

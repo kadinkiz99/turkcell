@@ -3,9 +3,59 @@
     ViewData["Title"] = "Add";
 }
 
-<h1>Ürün Ekleme</h1>
+<h1>ÜRÜN EKLE</h1>
 @model Product
 <form  asp-controller="Products" asp-action="Add" method="post" >
+
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label">İSİM</label>
+        <input class="form-control" asp-for="Name">
+    </div>
+
+    <div class="mb-3">
+        <label for="Price" class="form-label">FİYAT</label>
+        <input class="form-control" asp-for="Price">
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Stock" class="form-label">STOK</label>
+        <input class="form-control" asp-for="Stock">
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="color" class="form-label">RENGİ</label>
+        <input class="form-control" asp-for="color">
+    </div>
+
+    <div class="form-check">
+        <input class="form-check-input"  asp-for="IsPublish">
+        <label class="form-check-label"  asp-for="IsPublish">
+            Yayınlansın mı ?
+        </label>
+    </div>
+
+
+    @foreach (var item in ViewBag.Expire as Dictionary<string, int>)
+    {
+        <div class="form-check">
+            <input class="form-check-input" id="@(item.Value)Expire" type="radio" asp-for="Expire" value="@(item.Value)Expire">
+        <label class="form-check-label" for="flexRadioDefault1">
+        @item.Key
+     </label>
+        </div>
+    }
+
+    <div class="form-floating" mb-3>
+  <textarea class="form-control" placeholder="Ürün Açıklama" asp-for="Description"></textarea>
+  <label asp-for="Description">Ürün AÇıklama</label>
+     </div>
+ 
+
+
+
+    <button  class="btn btn-primary" type="submit">ÜRÜN KAYDET</button>
+
+
 
   <!-- 
       <label>Ürün İsmi :</label>
@@ -21,7 +71,8 @@
       <input type="text" name="color" /><br />
       
    -->
-    <label>Ürün İsmi :</label>
+   
+   <!-- <label>Ürün İsmi :</label>
     <input type="text" asp-for="Name" /><br />
 
     <label>Ürün Fiyat :</label>
@@ -33,6 +84,8 @@
     <label>Ürün Renk :</label>
     <input type="text" asp-for="color" /><br />
 
-    <button type="submit">ÜRÜN KAYDET</button>
+    <button type="submit">ÜRÜN KAYDET</button>-->
+
+
 </form>
 

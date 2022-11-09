@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using turkcell.Helpers;
 using turkcell.Models;
 
 namespace turkcell
@@ -18,7 +19,7 @@ namespace turkcell
 		{
 			CreateHostBuilder(args).Build().Run();
 		}
-
+		//builder.Services.AddSingleton<Helper ,Helper>();
 		
 		public static IHostBuilder CreateHostBuilder(string[] args) =>
 			Host.CreateDefaultBuilder(args)

@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using System.Linq;
+using turkcell.Helpers;
 using turkcell.Models;
 
 namespace turkcell.Controllers
@@ -10,11 +12,12 @@ namespace turkcell.Controllers
         AppDbContext _appDbContext;
         // önceden tanımladığımız repo projeye eklendi 
         private readonly ProductRepository _productRepository;
-      
-        public ProductsController()
+      // private IHelper _helper; 
+        public ProductsController( )
         {
             _productRepository = new ProductRepository();
            _appDbContext = new AppDbContext(); 
+           // _helper = helper;   
         }
         
 		public IActionResult Index()
@@ -37,6 +40,18 @@ namespace turkcell.Controllers
        
         public IActionResult Add()
         {
+
+            ViewBag.Expire = new Dictionary<string, int>()
+            {
+                {"1 ay ", 1 },
+				{"3 ay ",  3},
+				{"6 ay ",  6},
+				{"12 ay ",12}
+
+
+
+			}; 
+
             return View();
 
         }
@@ -45,7 +60,6 @@ namespace turkcell.Controllers
 		//1. ve 2. yöntem için 
 		//public IActionResult Add(string Name , decimal Price , int Stock ,string color )
 		public IActionResult Add(Product product)
-
 		{
             ////1. yöntem 
             //var name = HttpContext.Request.Form["Name"].ToString();
@@ -74,10 +88,10 @@ namespace turkcell.Controllers
 
 		}
         [HttpPost]
-		public IActionResult Update(Product updateproduct )
+		public IActionResult Update(Product updateproduct ,int productId)
 		{
             //query string kullanark id gönderme işlemi 
-            //updateproduct.id = productId;
+            updateproduct.id = productId;
 			_appDbContext.Products.Update(updateproduct);
             _appDbContext.SaveChanges();
             TempData["status"] = "Ürün başarıyla Güncellendi";
