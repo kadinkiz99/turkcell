@@ -23,8 +23,12 @@
     </div>
 
     <div class="mb-3">
-        <label asp-for="color" class="form-label">RENGİ</label>
-        <input class="form-control" asp-for="color">
+        @*<label asp-for="color" class="form-label">RENGİ</label>
+        <input class="form-control" asp-for="color">  *@
+
+        <select class="form-select" asp-for="color" asp-items="@ViewBag.ColorSelect">
+            <option value="">Renk Seçiniz </option>
+        </select>
     </div>
 
     <div class="form-check">
@@ -46,10 +50,14 @@
     }
 
     <div class="form-floating" mb-3>
+     <label asp-for="Description">ÜRÜN AÇIKLAMA </label>
   <textarea class="form-control" placeholder="Ürün Açıklama" asp-for="Description"></textarea>
-  <label asp-for="Description">Ürün AÇıklama</label>
      </div>
- 
+
+    <div class="mb-3">
+        <label asp-for="PublishDate" class="form-label">ÜRÜN YAYINLANMA TARİHİ</label>
+        <input class="form-control" asp-for="PublishDate">
+    </div>
 
 
 

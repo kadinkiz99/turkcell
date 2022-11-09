@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using System.Linq;
 using turkcell.Helpers;
@@ -50,8 +52,14 @@ namespace turkcell.Controllers
 
 
 
-			}; 
-
+			};
+            ViewBag.ColorSelect = new SelectList(new List<ColorSelectList>()
+            {
+                new (){Data = "Mavi", Value="Mavi"},
+				new (){Data = "Kırmızı", Value="Kırmızı"},
+				new (){Data = "Sarı", Value="Sarı"},
+				new (){Data = "Yeşil", Value="Yeşil"}
+			},"Value","Data");
             return View();
 
         }

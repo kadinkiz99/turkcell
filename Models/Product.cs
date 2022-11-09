@@ -1,4 +1,7 @@
-﻿namespace turkcell.Models
+﻿using Microsoft.VisualBasic;
+using System;
+
+namespace turkcell.Models
 {
     public class Product
     {
@@ -13,6 +16,7 @@
         public bool IsPublish { get; set; }
         public int Expire { get; set; }
         public string  Description { get; set; }
+        public  DateTime? PublishDate { get; set; }
 
     }
 }
