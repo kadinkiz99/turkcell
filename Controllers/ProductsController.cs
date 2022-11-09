@@ -74,7 +74,7 @@ namespace turkcell.Controllers
         [HttpPost]
 		//1. ve 2. yöntem için 
 		//public IActionResult Add(string Name , decimal Price , int Stock ,string color )
-		public IActionResult Add(Product product)
+		public IActionResult Add(ProductVM product)
 		{
             ////1. yöntem 
             //var name = HttpContext.Request.Form["Name"].ToString();
@@ -86,15 +86,38 @@ namespace turkcell.Controllers
             /*Product newProduct = new Product() { Name = Name, Price = Price, Stock = Stock, color = color };
             _appDbContext.Products.Add(newProduct);
             */
-            _appDbContext.Products.Add(product);
-            
+               if(ModelState.IsValid==true)
+               {
+				
 
-            //request -Head -Body 
+				_appDbContext.Products.Add(_mapper.Map<Product>(product));
+				_appDbContext.SaveChanges();
+				TempData["status"] = "Ürün başarıyla Eklendi";
+				return RedirectToAction("Index");
 
-            _appDbContext.SaveChanges();
-			TempData["status"] = "Ürün başarıyla Eklendi";
+		    	}
+               else
+               {
+				ViewBag.Expire = new Dictionary<string, int>()
+			{
+				{"1 ay ", 1 },
+				{"3 ay ",  3},
+				{"6 ay ",  6},
+				{"12 ay ",12}
 
-			return RedirectToAction("Index");
+
+
+			};
+				ViewBag.ColorSelect = new SelectList(new List<ColorSelectList>()
+			{
+				new (){Data = "Mavi", Value="Mavi"},
+				new (){Data = "Kırmızı", Value="Kırmızı"},
+				new (){Data = "Sarı", Value="Sarı"},
+				new (){Data = "Yeşil", Value="Yeşil"}
+			}, "Value", "Data", product.color);
+				return View();
+               }
+
         }
 		public IActionResult Update(int id)
 		{

@@ -4,12 +4,14 @@
 }
 
 <h1>ÜRÜN EKLE</h1>
-@model Product
+@*@model Product*@
+@model ProductVM
 <form  asp-controller="Products" asp-action="Add" method="post" >
 
     <div class="mb-3">
         <label asp-for="Name" class="form-label">İSİM</label>
         <input class="form-control" asp-for="Name">
+        <span  class="text-danger" asp-validation-for="Name"></span>
     </div>
 
     <div class="mb-3">

@@ -1,10 +1,12 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace turkcell.ViewModels
 {
     public class ProductVM
     {
 		public int id { get; set; }
+		[Required]
 		public string Name { get; set; }
 		public decimal Price { get; set; }
 		public int Stock { get; set; }
