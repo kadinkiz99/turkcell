@@ -5,29 +5,72 @@
 
 <h1>Ürün Güncelleme </h1>
 @model Product
-     <form asp-controller="Products" asp-action="Update" asp-route-productId="@Model.id" method="post">
+<form asp-controller="Products" asp-action="Update" method="post" asp-route-productId="@Model.id">
 
-        <!--  <input type="hidden" asp-for="id" /> -->
-    <label>Ürün İsmi :</label>
-    <input type="text" asp-for="Name"  /><br />
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label">İSİM</label>
+        <input class="form-control" asp-for="Name">
+    </div>
 
-    <label>Ürün Fiyat :</label>
-    <input type="text" asp-for="Price" /><br />
+    <div class="mb-3">
+        <label for="Price" class="form-label">FİYAT</label>
+        <input class="form-control" asp-for="Price">
+    </div>
 
-    <label>Ürün Stok :</label>
-    <input type="text" asp-for="Stock" /><br />
+    <div class="mb-3">
+        <label asp-for="Stock" class="form-label">STOK</label>
+        <input class="form-control" asp-for="Stock">
+    </div>
 
-    <label>Ürün Renk :</label>
-    <input type="text" asp-for="color" /><br />
+    <div class="mb-3">
+   
+        <select class="form-select" asp-for="color" asp-items="@ViewBag.ColorSelect">
+            <option value="">Renk Seçiniz </option>
+        </select>
+    </div>
 
-
-    <div class="form-floating" mb-3>
-        <textarea class="form-control" placeholder="Ürün Açıklama" asp-for="Description"></textarea>
-        <label asp-for="Description">Ürün AÇıklama</label>
+    <div class="form-check">
+        <input class="form-check-input" asp-for="IsPublish">
+        <label class="form-check-label" asp-for="IsPublish">
+            Yayınlansın mı ?
+        </label>
     </div>
 
 
-    <button type="submit">ÜRÜN GÜNCELLE</button>
+    @foreach (var item in ViewBag.Expire as Dictionary<string, int>)
+    {
+        <div class="form-check">
+
+       @if( item.Value == ViewBag.ExpireValue)
+        {
+                <input checked= "checked" class="form-check-input" id="@(item.Value)Expire" type="radio" asp-for="Expire" value="@item.Value">
+              
+        }
+        else 
+        {
+            <input class="form-check-input" id="@(item.Value)Expire" type="radio" asp-for="Expire" value="@item.Value">
+
+        }
+            <label class="form-check-label" for="flexRadioDefault1">
+                @item.Key
+            </label>
+           </div> 
+    }
+
+    <div class="form-floating" mb-3>
+        <label asp-for="Description">ÜRÜN AÇIKLAMA </label>
+        <textarea class="form-control" placeholder="Ürün Açıklama" asp-for="Description"></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="PublishDate" class="form-label">ÜRÜN YAYINLANMA TARİHİ</label>
+        <input class="form-control" asp-for="PublishDate">
+    </div>
+
+
+
+    <button class="btn btn-primary" type="submit">ÜRÜN GÜNCELLE</button>
+
 </form>
 
 

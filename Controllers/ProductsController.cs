@@ -91,15 +91,36 @@ namespace turkcell.Controllers
         }
 		public IActionResult Update(int id)
 		{
-            var product =_appDbContext.Products.Find(id);   
+            var product =_appDbContext.Products.Find(id);
+            ViewBag.RadioExpireValue = product.Expire;
+			ViewBag.Expire = new Dictionary<string, int>()
+			{
+				{"1 ay ", 1 },
+				{"3 ay ",  3},
+				{"6 ay ",  6},
+				{"12 ay ",12}
+
+
+
+			};
+			ViewBag.ColorSelect = new SelectList(new List<ColorSelectList>()
+			{
+				new (){Data = "Mavi", Value="Mavi"},
+				new (){Data = "Kırmızı", Value="Kırmızı"},
+				new (){Data = "Sarı", Value="Sarı"},
+				new (){Data = "Yeşil", Value="Yeşil"}
+			}, "Value", "Data" ,product.color);
+
+
 			return View(product);
 
 		}
         [HttpPost]
 		public IActionResult Update(Product updateproduct ,int productId)
 		{
-            //query string kullanark id gönderme işlemi 
-            updateproduct.id = productId;
+			
+			//query string kullanark id gönderme işlemi 
+			updateproduct.id = productId;
 			_appDbContext.Products.Update(updateproduct);
             _appDbContext.SaveChanges();
             TempData["status"] = "Ürün başarıyla Güncellendi";
