@@ -21,7 +21,6 @@ namespace turkcell
 			CreateHostBuilder(args).Build().Run();
 		}
 		//builder.Services.AddSingleton<Helper ,Helper>();
-
 		public static IHostBuilder CreateHostBuilder(string[] args) =>
 			Host.CreateDefaultBuilder(args)
 				.ConfigureWebHostDefaults(webBuilder =>

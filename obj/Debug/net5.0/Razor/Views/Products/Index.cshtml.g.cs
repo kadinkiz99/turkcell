@@ -35,9 +35,7 @@ using turkcell.ViewModels;
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0dca0d9bf1a4c1952e52e203f2e1585b0117340d", @"/Views/Products/Index.cshtml")]
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"fb46744bb557dd8b8328ab5ef0b875ba9d4b31bf", @"/Views/_ViewImports.cshtml")]
-    #nullable restore
     public class Views_Products_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<ProductVM>>
-    #nullable disable
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "products", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_1 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "Add", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -102,7 +100,7 @@ using turkcell.ViewModels;
 #line hidden
 #nullable disable
             WriteLiteral("<td>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0dca0d9bf1a4c1952e52e203f2e1585b0117340d5315", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0dca0d9bf1a4c1952e52e203f2e1585b0117340d5269", async() => {
                 WriteLiteral("ÜRÜN EKLE");
             }
             );
@@ -238,7 +236,7 @@ using turkcell.ViewModels;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n                </td>\r\n\r\n                <td>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0dca0d9bf1a4c1952e52e203f2e1585b0117340d9743", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0dca0d9bf1a4c1952e52e203f2e1585b0117340d9697", async() => {
                 WriteLiteral("SİL");
             }
             );
@@ -271,7 +269,7 @@ using turkcell.ViewModels;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</td>\r\n                <td>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0dca0d9bf1a4c1952e52e203f2e1585b0117340d12129", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0dca0d9bf1a4c1952e52e203f2e1585b0117340d12083", async() => {
                 WriteLiteral("GÜNCELLE");
             }
             );
@@ -314,26 +312,16 @@ using turkcell.ViewModels;
             WriteLiteral("\r\n    </tbody>\r\n  \r\n</table>\r\n\r\n");
         }
         #pragma warning restore 1998
-        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; } = default!;
-        #nullable disable
-        #nullable restore
+        public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.IUrlHelper Url { get; private set; } = default!;
-        #nullable disable
-        #nullable restore
+        public global::Microsoft.AspNetCore.Mvc.IUrlHelper Url { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.IViewComponentHelper Component { get; private set; } = default!;
-        #nullable disable
-        #nullable restore
+        public global::Microsoft.AspNetCore.Mvc.IViewComponentHelper Component { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.Rendering.IJsonHelper Json { get; private set; } = default!;
-        #nullable disable
-        #nullable restore
+        public global::Microsoft.AspNetCore.Mvc.Rendering.IJsonHelper Json { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper<List<ProductVM>> Html { get; private set; } = default!;
-        #nullable disable
+        public global::Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper<List<ProductVM>> Html { get; private set; }
     }
 }
 #pragma warning restore 1591

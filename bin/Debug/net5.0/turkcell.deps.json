@@ -34,6 +34,7 @@
       "turkcell/1.0.0": {
         "dependencies": {
           "Abp": "7.4.0",
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "5.0.1",
           "Microsoft.EntityFrameworkCore": "5.0.0",
           "Microsoft.EntityFrameworkCore.Design": "5.0.0",
           "Microsoft.EntityFrameworkCore.Relational": "5.0.0",
@@ -297,7 +298,7 @@
           "System.Threading.Timer.Reference": "5.0.0.0",
           "System.Transactions": "4.0.0.0",
           "System.Transactions.Local": "5.0.0.0",
-          "System.ValueTuple": "4.0.3.0",
+          "System.ValueTuple.Reference": "4.0.3.0",
           "System.Web": "4.0.0.0",
           "System.Web.HttpUtility": "5.0.0.0",
           "System.Windows": "4.0.0.0",
@@ -352,35 +353,33 @@
           "lib/netstandard2.0/Abp.dll": {}
         }
       },
-      "AutoMapper/6.1.1": {
+      "AutoMapper/7.0.1": {
         "dependencies": {
-          "Microsoft.CSharp": "4.7.0",
-          "System.Collections": "4.3.0",
-          "System.Collections.Concurrent": "4.3.0",
-          "System.Collections.Specialized": "4.3.0",
-          "System.ComponentModel.TypeConverter": "4.3.0",
-          "System.Diagnostics.Debug": "4.3.0",
-          "System.Dynamic.Runtime": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.Linq": "4.3.0",
-          "System.Linq.Expressions": "4.3.0",
-          "System.Linq.Queryable": "4.3.0",
-          "System.Reflection": "4.3.0",
-          "System.Reflection.Extensions": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Text.RegularExpressions": "4.3.0",
-          "System.Threading": "4.3.0"
+          "System.ValueTuple": "4.5.0"
         },
         "runtime": {
-          "lib/netstandard1.3/AutoMapper.dll": {
-            "assemblyVersion": "6.1.1.0",
-            "fileVersion": "6.1.1.0"
+          "lib/netcoreapp2.0/AutoMapper.dll": {
+            "assemblyVersion": "7.0.1.0",
+            "fileVersion": "7.0.1.0"
           }
         },
         "compile": {
-          "lib/netstandard1.3/AutoMapper.dll": {}
+          "lib/netcoreapp2.0/AutoMapper.dll": {}
+        }
+      },
+      "AutoMapper.Extensions.Microsoft.DependencyInjection/5.0.1": {
+        "dependencies": {
+          "AutoMapper": "7.0.1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "5.0.1.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
         }
       },
       "Castle.Core/4.4.1": {
@@ -1083,18 +1082,9 @@
       "runtime.ubuntu.16.10-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "SyrianBallaS.AutoMapper.Extensions.Microsoft.DependencyInjection.Signed/3.2.0": {
         "dependencies": {
-          "AutoMapper": "6.1.1",
+          "AutoMapper": "7.0.1",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
           "Microsoft.Extensions.DependencyModel": "2.0.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "3.2.0.0"
-          }
-        },
-        "compile": {
-          "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
         }
       },
       "System.AppContext/4.3.0": {
@@ -2007,6 +1997,7 @@
           "System.Runtime": "4.3.0"
         }
       },
+      "System.ValueTuple/4.5.0": {},
       "System.Windows.Extensions/6.0.0": {
         "dependencies": {
           "System.Drawing.Common": "6.0.0"
@@ -3688,7 +3679,7 @@
         },
         "compileOnly": true
       },
-      "System.ValueTuple/4.0.3.0": {
+      "System.ValueTuple.Reference/4.0.3.0": {
         "compile": {
           "System.ValueTuple.dll": {}
         },
@@ -3787,12 +3778,19 @@
       "path": "abp/7.4.0",
       "hashPath": "abp.7.4.0.nupkg.sha512"
     },
-    "AutoMapper/6.1.1": {
+    "AutoMapper/7.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-A+6PAblvzmkXPS20nFBQJvlNSW5oEdyfN5+cxT/Du35fTNyuP5pNDXT64KT/jBgxt7CPduOM0Y7oLnNe0E5IXg==",
-      "path": "automapper/6.1.1",
-      "hashPath": "automapper.6.1.1.nupkg.sha512"
+      "sha512": "sha512-6xHbhsW09sWjjYuE1sqhYn25PQzB6UEUVPME5uhlaIz2NR2+L3+FGbVxvknJKug1BLp6VTLxDb5RcGXKMm0ieQ==",
+      "path": "automapper/7.0.1",
+      "hashPath": "automapper.7.0.1.nupkg.sha512"
+    },
+    "AutoMapper.Extensions.Microsoft.DependencyInjection/5.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7MIq6D/ax3964iHXbL1L2ldUvl6IlKp0p1GZFzr6vlIhEVyp4CgJwOpisRLvIO7dP+kDtbY3Hb9yuPNCkfyBFg==",
+      "path": "automapper.extensions.microsoft.dependencyinjection/5.0.1",
+      "hashPath": "automapper.extensions.microsoft.dependencyinjection.5.0.1.nupkg.sha512"
     },
     "Castle.Core/4.4.1": {
       "type": "package",
@@ -4822,6 +4820,13 @@
       "sha512": "sha512-Z6YfyYTCg7lOZjJzBjONJTFKGN9/NIYKSxhU5GRd+DTwHSZyvWp1xuI5aR+dLg+ayyC5Xv57KiY4oJ0tMO89fQ==",
       "path": "system.threading.timer/4.3.0",
       "hashPath": "system.threading.timer.4.3.0.nupkg.sha512"
+    },
+    "System.ValueTuple/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-okurQJO6NRE/apDIP23ajJ0hpiNmJ+f0BwOlB/cSqTLQlw5upkf+5+96+iG2Jw40G1fCVCyPz/FhIABUjMR+RQ==",
+      "path": "system.valuetuple/4.5.0",
+      "hashPath": "system.valuetuple.4.5.0.nupkg.sha512"
     },
     "System.Windows.Extensions/6.0.0": {
       "type": "package",
@@ -6164,7 +6169,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "System.ValueTuple/4.0.3.0": {
+    "System.ValueTuple.Reference/4.0.3.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""

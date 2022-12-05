@@ -17,11 +17,15 @@
     <div class="mb-3">
         <label for="Price" class="form-label">FİYAT</label>
         <input class="form-control" asp-for="Price">
+        <span  class="text-danger" asp-validation-for="Price"></span>
+
     </div>
 
     <div class="mb-3">
         <label asp-for="Stock" class="form-label">STOK</label>
         <input class="form-control" asp-for="Stock">
+        <span class="text-danger" asp-validation-for="Stock"></span>
+
     </div>
 
     <div class="mb-3">
@@ -38,6 +42,8 @@
         <label class="form-check-label"  asp-for="IsPublish">
             Yayınlansın mı ?
         </label>
+        <span class="text-danger" asp-validation-for="IsPublish"></span>
+
     </div>
 
 
@@ -50,15 +56,21 @@
      </label>
         </div>
     }
+    <span class="text-danger" asp-validation-for="Expire"></span>
+
 
     <div class="form-floating" mb-3>
      <label asp-for="Description">ÜRÜN AÇIKLAMA </label>
-  <textarea class="form-control" placeholder="Ürün Açıklama" asp-for="Description"></textarea>
+      <textarea class="form-control" placeholder="Ürün Açıklama" asp-for="Description"></textarea>
+        <span class="text-danger" asp-validation-for="Description"></span>
+
      </div>
 
     <div class="mb-3">
         <label asp-for="PublishDate" class="form-label">ÜRÜN YAYINLANMA TARİHİ</label>
         <input class="form-control" asp-for="PublishDate">
+        <span class="text-danger" asp-validation-for="PublishDate"></span>
+
     </div>
 
 
