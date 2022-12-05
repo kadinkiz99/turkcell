@@ -8,21 +8,22 @@ namespace turkcell.Models
     {
         public int id { get; set; }
 
-        [Required(ErrorMessage = "İsim Alanı boş bırakılamaz")]
+        [Required(ErrorMessage = "İsim Alanı boş bırakılamaz.")]
 		public string Name { get; set; }
 
-
+		//[Required(ErrorMessage = "Fiyat Alanı boş bırakılamaz.")]
+		[Range(1, 1000, ErrorMessage = "Fiyat alanı 1 ile 1000 arasında değerler almalı.")]
 		public decimal? Price { get; set; }
 
-
+		[Required(ErrorMessage="Stok Alanı boş bırakılamaz.")]
+		[Range(1,200,ErrorMessage ="Stok alanı 1 ile 200 arasında değerler almalı.")]
 		public int? Stock { get; set; }
 
-
 		public string color  { get; set; }
-	//	public int? Width { get; set; }// ? nullable olduğu için eklendş 
+		//	public int? Width { get; set; }// ? nullable olduğu için eklendş 
 		//public int? Height { get; set; }
 
-        public bool? IsPublish { get; set; }
+		public bool? IsPublish { get; set; }
 
 		public int? Expire { get; set; }
 
